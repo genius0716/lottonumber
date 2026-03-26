@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>로또 번호 추첨기</title>
-</head>
-<body>
-
-  <h1>🎲 로또 번호 추첨기</h1>
-  <button onclick="draw()">번호 뽑기</button>
-
-  <h2 id="result"></h2>
-
-  <script>
-    function draw() {
-      let nums = [];
-      while (nums.length < 6) {
-        let n = Math.floor(Math.random() * 45) + 1;
-        if (!nums.includes(n)) nums.push(n);
-      }
-      nums.sort((a, b) => a - b);
-
-      let bonus;
-      do {
-        bonus = Math.floor(Math.random() * 45) + 1;
-      } while (nums.includes(bonus));
-
-      document.getElementById("result").innerText =
-        "번호: " + nums.join(", ") + " / 보너스: " + bonus;
-    }
-  </script>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
+
